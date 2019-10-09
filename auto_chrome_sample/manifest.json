@@ -1,0 +1,26 @@
+{
+  "name": "hello",
+  "description" : "Base Level Extension",
+  "version": "1.0",
+  "permissions" :[
+    "activeTab",  "tabs"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "hello_extensions.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://needtec.sakura.ne.jp/auto_demo/form1.html"
+      ],
+      "js": ["content_input.js"]
+    },{
+      "matches": [
+        "http://needtec.sakura.ne.jp/auto_demo/regist1.php"
+      ],
+      "js": ["content_result.js"]
+    }
+  ],
+  "manifest_version": 2
+}
